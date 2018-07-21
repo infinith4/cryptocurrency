@@ -55,6 +55,10 @@ Account #1: {3bb960dadd4c966a4e25d6937e4c09af0cb14a86} /home/th4/data_testnet/ke
 Account #2: {eb3fbed5f607625056b73436b7174f8c3a54659b} /home/th4/data_testnet/keystore/UTC--2018-07-21T15-46-17.498666690Z--eb3fbed5f607625056b73436b7174f8c3a54659b
 
 
+# mining
+
+geth --networkid 4649 --nodiscover --maxpeers 0 --datadir ~/data_testnet console 2>> ~/data_testnet/geth.log
+
 > eth.coinbase
 "0x537d6770ad5510cb1d1b0ce776a803fa5359ff8b"
 > miner.setEtherbase(eth.accounts[1])
@@ -73,8 +77,3 @@ true
 0
 > eth.blockNumber
 0
-
-
-# mining
-
-geth --networkid 4649 --nodiscover --maxpeers 0 --datadir ~/data_testnet console 2>> ~/data_testnet/geth.log
