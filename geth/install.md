@@ -77,3 +77,69 @@ true
 0
 > eth.blockNumber
 0
+
+Start Mining
+> miner.start(1)
+true
+
+tail -100f ~/data_testnet/geth.log
+
+I0722 00:54:59.375898 vendor/github.com/ethereum/ethash/ethash.go:291] Generating DAG: 15%
+I0722 00:55:04.094768 vendor/github.com/ethereum/ethash/ethash.go:291] Generating DAG: 16%
+I0722 00:55:08.759254 vendor/github.com/ethereum/ethash/ethash.go:291] Generating DAG: 17%
+
+.....
+
+I0722 01:05:23.243609 miner/unconfirmed.go:83] 🔨  mined potential block #118 [3f96439d…], waiting for 5 blocks to confirm
+I0722 01:05:23.243792 miner/worker.go:516] commit new work on block 119 with 0 txs & 0 uncles. Took 152.723µs
+I0722 01:05:29.156201 miner/unconfirmed.go:105] 🔗  mined block #114 [fb55ff37…] reached canonical chain
+I0722 01:05:29.156229 miner/unconfirmed.go:83] 🔨  mined potential block #119 [45fb0684…], waiting for 5 blocks to confirm
+I0722 01:05:29.156486 miner/worker.go:516] commit new work on block 120 with 0 txs & 0 uncles. Took 225.252µs
+I0722 01:05:34.023395 miner/unconfirmed.go:105] 🔗  mined block #115 [f6983793…] reached canonical chain
+I0722 01:05:34.023426 miner/unconfirmed.go:83] 🔨  mined potential block #120 [7667efed…], waiting for 5 blocks to confirm
+I0722 01:05:34.023610 miner/worker.go:516] commit new work on block 121 with 0 txs & 0 uncles. Took 144.228µs
+
+~/data_testnet$ tree ~/.ethash
+/home/(hoge)/.ethash
+└── full-R23-0000000000000000
+
+0 directories, 1 file
+~/data_testnet$ ls -lh ~/.ethash/full-R23-0000000000000000
+-rw-rw-r-- 1 th4 th4 1.0G  7月 22 01:01 /home/(hoge)/.ethash/full-R23-0000000000000000
+
+
+> eth.mining
+true
+> eth.hashrate
+139894
+> eth.blockNumber
+200
+> eth.blockNumber
+217
+> eth.blockNumber
+228
+
+
+miner.stop()
+
+eth.mining
+
+eth.hashrate
+
+eth.blockNumber
+
+> eth.getBalance(eth.coinbase)
+1.515e+21
+> eth.getBalance(eth.accounts[0])
+1.515e+21
+
+wei
+
+1ether = 10^18 wei
+
+web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+
+> web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+1715
+
+balance is 5ether / 1 block .
