@@ -24,3 +24,11 @@ at block: 113 (Tue, 31 Jul 2018 22:04:55 JST)
 >
 >
 ["Solidity"]
+
+
+
+cat HelloWorldOrg.sol | tr -d '\n' > HelloWorld.sol
+cat HelloWorld.sol
+geth attach rpc:http://localhost:8545
+source='pragma solidity ^0.4.8;contract HelloWorld {  string public greeting;  function HelloWorld(string _greeting) {    greeting = _greeting;  }  function setGreeting(string _greeting) {    greeting = _greeting;  }  function say() constant returns (string) {    return greeting;  }}'
+sourceCompiled = eth.compile.solidity(source)
