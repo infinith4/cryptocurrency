@@ -9,9 +9,8 @@ sudo cp build/bin/geth /usr/local/bin/
 which geth
 
 
-mkdir ~/data_testnet
-cp genesis.json ~/data_testnet
-geth --datadir ~/data_testnet init ~/data_testnet/genesis.json
+$ mkdir ~/data_testnet
+$ cp genesis.json ~/data_testnet
 ~/gitrepo/github/go-ethereum$ geth --datadir ~/data_testnet init ~/data_testnet/genesis.json
 I0719 22:48:37.554278 cmd/utils/flags.go:615] WARNING: No etherbase set and no accounts found as default
 I0719 22:48:37.554339 ethdb/database.go:83] Allotted 128MB cache and 1024 file handles to /home/th4/data_testnet/geth/chaindata
