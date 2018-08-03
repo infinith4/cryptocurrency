@@ -71,3 +71,4 @@ undefined
     type: "function"
 }]
 >
+var cnt = eth.contract(myContract.abi).at(myContract.address);
