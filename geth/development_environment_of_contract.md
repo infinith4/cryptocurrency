@@ -41,3 +41,30 @@ contract RecvEther {
 > web3.fromWei(eth.getBalance("0x84f5c6ce6886bb8d936f2ba0cfe386ad7fc36eae"), "ether")
 
 8.99936846
+
+
+## develop contract
+
+```
+pragma solidity ^0.4.8;
+
+contract DataTypeSample {
+  function getValueType() constant returns (uint) {
+    uint a;
+    a = 1;
+    uint b = a;
+    b = 2;
+    return a;
+  }
+
+  function getReferenceType() constant returns (uint[2]) {
+    uint[2] a;
+    a[0] = 1;
+    a[1] = 2;
+    uint[2] b = a;
+    b[0] = 10;
+    b[1] = 20;
+    return a;
+  }
+}
+```
