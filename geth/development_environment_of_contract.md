@@ -68,3 +68,21 @@ contract DataTypeSample {
   }
 }
 ```
+
+```
+pragma solidity ^0.4.8;
+
+contract IntSample {
+  function division() constant returns (uint) {
+    uint a = 3;
+    uint b = 2;
+    uint c = a / b * 10;
+    return c;
+  }
+
+  function divisionLiterals() constant returns (uint) {
+    uint c = 3 / 2 * 10;
+    return c;
+  }
+}
+```
