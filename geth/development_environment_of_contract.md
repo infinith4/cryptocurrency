@@ -93,3 +93,18 @@ contract IntSample {
   }
 }
 ```
+
+
+```
+pragma solidity ^0.4.8;
+
+contract AddressSample {
+  function () payable {}
+    function getBalance(address _target) constant returns (uint){
+      if(_target == address(0)){
+        _target = this;
+      }
+      return _target.balance;
+    }
+}
+```
