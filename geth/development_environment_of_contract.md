@@ -84,5 +84,12 @@ contract IntSample {
     uint c = 3 / 2 * 10;
     return c;
   }
+
+  function shift() constant returns (uint[2]){
+    uint[2] a;
+    a[0] = 16 << 2;
+    a[1] = 16 >> 2;
+    return a;
+  }
 }
 ```
