@@ -1,11 +1,12 @@
 import sched, time, datetime, threading, sys
+import subprocess
 
 def processing(a):
-    print(datetime.datetime.now(), a)
+    subprocess.call( ["python3", "sch.py"] )
     
 def schedule():
     s = sched.scheduler(time.time, time.sleep)
-    set_time = datetime.datetime.strptime('2018/08/22,06:53', '%Y/%m/%d,%H:%M')  # イベントの開始日時
+    set_time = datetime.datetime.strptime('2018/08/22,06:57', '%Y/%m/%d,%H:%M')  # イベントの開始日時
     add_date = datetime.timedelta(days=1)  # タイムスケジュールの間隔
     while True:
         print(datetime.datetime.now(), 'start')
